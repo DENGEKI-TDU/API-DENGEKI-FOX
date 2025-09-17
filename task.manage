@@ -1,0 +1,4 @@
+# Task
+prismaのクライアントをふたつ作成
+npx prisma generate --schema prisma/mainDB.prisma
+npx prisma generate --schema prisma/account.prisma

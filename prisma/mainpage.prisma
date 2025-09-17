@@ -1,0 +1,92 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./client/mainDB"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("MAIN_DB_URL")
+}
+
+
+model member {
+  id            Int      @id @default(autoincrement())
+  name          String
+  course        String
+  generation    Int
+  Icon          String?
+  X_id          String? 
+  haritora      String?
+  message       String?
+  isReader      Boolean  @default(false)
+  isSubReader   Boolean  @default(false)
+  isFirstReader Boolean  @default(false)
+  isDirector    Boolean  @default(false)
+  isMaking      Boolean  @default(false)
+  isWriter      Boolean  @default(false)
+  isActor       Boolean  @default(false)
+  isSoundReader Boolean  @default(false)
+  isSound       Boolean  @default(false)
+  isLightReader Boolean  @default(false)
+  isLight       Boolean  @default(false)
+  isPropReader  Boolean  @default(false)
+  isProp        Boolean  @default(false)
+  isClothReader Boolean  @default(false)
+  isCloth       Boolean  @default(false)
+  isRetired     Boolean  @default(false)
+  level         Int      @default(0)
+}
+
+model discord {
+  id          Int       @id @default(autoincrement())
+  name        String
+  discord_id  String
+}
+
+model movie {
+  id          Int       @id @default(autoincrement())
+  year        Int
+  name        String    @default("")
+  link        String    @default("")
+}
+
+model document {
+  id          Int       @id @default(autoincrement())
+  name        String
+  filename    String
+  creator     String
+  tag         String
+}
+
+model loginlog {
+  id          Int      @id @default(autoincrement())
+  user        String
+  ip          String
+  network     String
+  locate      String
+  date        String
+}
+
+model errorloginlog {
+  id          Int      @id @default(autoincrement())
+  user        String
+  ip          String
+  network     String
+  locate      String
+  date        String
+}
+
+model kouendate {
+  id         Int    @id @default(autoincrement())
+  year       Int
+  name       String
+  date       String
+  place      String
+  link       String
+}

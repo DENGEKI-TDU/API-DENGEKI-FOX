@@ -1,0 +1,110 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./client/accountDB"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("ACCOUNT_DB_URL")
+}
+
+model mainAccount {
+  id            Int @id @default(autoincrement())
+  year          String
+  date          DateTime
+  type          String
+  typeAlphabet  String
+  subtype       String
+  fixture       String
+  income        Int
+  outcome       Int
+}
+
+model hatosaiAccount {
+  id            Int @id @default(autoincrement())
+  year          String
+  date          DateTime
+  type          String
+  typeAlphabet  String
+  subtype       String
+  fixture       String
+  income        Int
+  outcome       Int
+}
+
+model clubsupportAccount {
+  id            Int @id @default(autoincrement())
+  year          String
+  date          DateTime
+  type          String
+  typeAlphabet  String
+  subtype       String
+  fixture       String
+  income        Int
+  outcome       Int
+}
+
+model alumniAccount {
+  id            Int @id @default(autoincrement())
+  year          String
+  date          DateTime
+  type          String
+  typeAlphabet  String
+  subtype       String
+  fixture       String
+  income        Int
+  outcome       Int
+}
+
+model aid {
+  id            Int @id @default(autoincrement())
+  year          String
+  date          DateTime
+  type          String
+  typeAlphabet  String
+  subtype       String
+  fixture       String
+  income        Int
+  outcome       Int
+}
+
+model accessHistory {
+  id           Int @id @default(autoincrement())
+  accessDate   DateTime
+}
+
+model threadID {
+  id           Int @id @default(autoincrement())
+  hookurl      String
+  threadID     String
+  mode         String
+}
+
+model tokens {
+  id           Int @id @default(autoincrement())
+  tokens       String
+  isUser       Boolean
+  isAdmin      Boolean
+  loginDate    DateTime
+  limit        DateTime
+}
+
+model users {
+  id           Int  @id @default(autoincrement())
+  user         String
+  pass         String
+  isAdmin      Boolean
+  isUser       Boolean
+}
+
+model oneTimeToken {
+  id           Int @id @default(autoincrement())
+  token        String
+  limit        DateTime
+}

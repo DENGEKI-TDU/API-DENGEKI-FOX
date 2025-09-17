@@ -1,0 +1,22 @@
+{
+  "name": "dengeki-api-express",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "beleth",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.0",
+    "axios": "^1.12.2",
+    "express": "^5.1.0",
+    "vercel": "^44.7.3"
+  },
+  "devDependencies": {
+    "@prisma/client": "5.10",
+    "prisma": "5.10"
+  }
+}
