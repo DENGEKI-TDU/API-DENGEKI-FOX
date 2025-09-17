@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc && node ./dist/index"
+    "start": "tsc && npx prisma generate && node ./dist/index"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.0",
